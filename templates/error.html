@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ошибка | Recruto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="description" content="Страница ошибки для сервиса приветствия">
+</head>
+<body>
+    <div class="container">
+        <div class="error-box">
+            <h2>Ошибка в параметрах запроса</h2>
+            <ul>
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            <div class="example">
+                <p>Пример корректного запроса:</p>
+                <code>/?name=Recruto&amp;message=Давай%20дружить</code>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
