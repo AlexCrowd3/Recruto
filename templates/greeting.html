@@ -9,58 +9,44 @@
 </head>
 <body>
     <div class="particles" id="particles-js"></div>
-    
+
     <div class="container">
-        {% if errors %}
-            <div class="error-box">
-                <h2>Ошибка в параметрах запроса</h2>
-                <ul>
-                    {% for error in errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-                <div class="example">
-                    <p>Пример корректного запроса:</p>
-                    <code>/?name=Recruto&amp;message=Давай%20дружить</code>
-                </div>
-            </div>
-        {% else %}
-            <div class="greeting-card">
-                <h1 class="greeting-text">Hello <span class="highlight">{{ name }}</span>!</h1>
-                <p class="message-text">{{ message }}!</p>
-            </div>
-            
-            <div class="params-info">
-                <p>Параметры запроса:</p>
-                <ul>
-                    <li><strong>name:</strong> {{ name }}</li>
-                    <li><strong>message:</strong> {{ message }}</li>
-                </ul>
-            </div>
-        {% endif %}
-        
+        <div class="greeting-card">
+            <h1 class="greeting-text">Hello <span class="highlight">{{ name }}</span>!</h1>
+            <p class="message-text">{{ message }}!</p>
+        </div>
+
+        <div class="params-info">
+            <p>Параметры запроса:</p>
+            <ul>
+                <li><strong>name:</strong> {{ name }}</li>
+                <li><strong>message:</strong> {{ message }}</li>
+            </ul>
+        </div>
+
         <div class="footer">
             <p>Сервис приветствия | Recruto</p>
         </div>
     </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const particlesContainer = document.createElement('div');
             particlesContainer.className = 'particles';
             document.body.prepend(particlesContainer);
-            
+
             const particleCount = window.innerWidth < 768 ? 30 : 50;
-            
+
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
-                
+
                 const size = Math.random() * 15 + 5;
                 const posX = Math.random() * 100;
                 const delay = Math.random() * 15;
                 const duration = Math.random() * 20 + 10;
                 const blur = Math.random() * 3 + 1;
-                
+
                 particle.style.cssText = `
                     width: ${size}px;
                     height: ${size}px;
@@ -71,7 +57,7 @@
                     backdrop-filter: blur(${blur}px);
                     background: rgba(255, 255, 255, ${Math.random() * 0.2 + 0.05});
                 `;
-                
+
                 particlesContainer.appendChild(particle);
             }
         });

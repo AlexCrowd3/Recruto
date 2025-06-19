@@ -5,13 +5,11 @@ app = Flask(__name__)
 def validate_input(name, message):
     errors = []
 
-    # Проверяем, были ли вообще переданы параметры
     if 'name' not in request.args:
         errors.append("Параметр 'name' должен быть указан в URL")
     if 'message' not in request.args:
         errors.append("Параметр 'message' должен быть указан в URL")
 
-    # Остальные проверки остаются
     if len(name) > 100:
         errors.append("Имя слишком длинное (макс. 100 символов)")
     if len(message) > 200:
