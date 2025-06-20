@@ -247,4 +247,13 @@ body {
     .error-box {
         padding: 20px;
     }
+    .example code {
+        display: block;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        max-width: 100%;
+        padding: 10px;
+        font-size: 0.8rem;
+    }
 }
